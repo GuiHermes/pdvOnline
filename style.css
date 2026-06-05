@@ -1,0 +1,208 @@
+@font-face {
+    font-family: "Font-Personalizada";
+    src: url("./assets/fonts/ShareTech-Regular.ttf") format("truetype");
+}
+
+:root{
+    /* Fundo */
+    --bg-primary: #0f1720;
+    --bg-secondary: #18242f;
+    --bg-card: #22313d;
+
+    /* Verdes */
+    --green-primary: #22c55e;
+    --green-secondary: #16a34a;
+    --green-hover: #15803d;
+    --green-light: #86efac;
+
+    /* Textos */
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+
+    /* Estados */
+    --success: #22c55e;
+    --warning: #facc15;
+    --danger: #ef4444;
+
+    /* Bordas */
+    --border-color: #334155;
+
+    /* Sombras */
+    --shadow: rgba(0, 0, 0, 0.25);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    font-family:'Font-Personalizada','Arial';
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+.header{
+    background-color: var(--green-primary);
+    border: 2px solid var(--border-color);
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-radius: 0px 0px 10px 10px;
+}
+.header > .nome{   
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-left: 10px;
+}
+.nome:hover{
+    transform: scale(1.2);
+}
+.menu{
+    display: flex;
+    list-style-type: none;
+
+}
+
+.menu > li{
+    text-decoration: none;
+    margin-left: 10px;
+    color: var(--text-primary);
+    background: var(--green-secondary);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.menu>li:hover{
+    background-color: var(--green-hover);    
+    transform: scale(1.1);
+}
+.valor{
+    background: transparent;
+}
+/* STYLE DA ASSIDE */
+aside{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.button-pesquisar{
+    background-color:var(--green-primary);
+    color: var(--text-primary);
+    border:none;
+    padding: 5px;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+    grid-column: 2;
+}
+.button-pesquisar:hover{
+    transform: scale(1.1);
+
+}
+.insert-pesquisar{
+    padding: 10px;
+    border:solid  var(--text-secondary);
+    background-color: var(--text-primary);
+    border-radius: 50px;
+    outline: none;
+    font-size: 16px;
+    grid-column: 1;
+}
+.insert-pesquisar::placeholder{
+    color: var(--text-muted);
+    font-size: 16px;
+}
+.produtos, 
+.checkout{
+    background-color: var(--bg-secondary);
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    border: solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+.produtos{
+    display: grid;
+    grid-template-columns:1fr auto;
+    gap: 10px;
+}
+.categoria-produtos{
+    text-align: center;
+    grid-column: 1/-1;
+}
+.card-produtos{
+    grid-column: 1/-1;
+}
+
+section > ul{
+    list-style-type: none;
+}
+/* STYLE DO CARD PRODUTOS */
+.card-produtos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    text-align: center;
+    max-height: 600px;
+    overflow-y: auto;
+}
+.produto{
+    background: var(--bg-card);
+    padding: 10px;
+}
+
+/* STYLE DO FOOTER */
+.footer{
+    display: flex;
+    padding: 20px;
+    justify-content:center;
+    gap: 20px;
+}
+.remove{
+    background-color: var(--bg-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    border: solid var(--danger);
+    font-weight: bold;
+    padding: 10px;
+    color: var(--danger);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.remove:hover{
+    color: var(--text-primary);
+    background: var(--danger);
+    border: solid var(--danger);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+.final{
+    gap: 3px;
+    background-color: var(--bg-primary);
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid var(--green-hover);
+    padding: 10px;
+    color: var(--green-hover);
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.final:hover{
+    color: aliceblue;
+    background: var(--green-hover);
+    border: solid var(--green-hover);
+    transform: scale(1.1);
+    cursor: pointer;
+}
