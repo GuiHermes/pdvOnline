@@ -3,7 +3,7 @@
     src: url("./assets/fonts/ShareTech-Regular.ttf") format("truetype");
 }
 
-:root{
+:root {
     /* Fundo */
     --bg-primary: #0f1720;
     --bg-secondary: #18242f;
@@ -29,22 +29,23 @@
     --border-color: #334155;
 
     /* Sombras */
-    --shadow: rgba(0, 0, 0, 0.25);
+    --shadow: 0 0 4px 10px rgba(0, 0, 0, 0.25);
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
-    font-family:'Font-Personalizada','Arial';
+    font-family: 'Font-Personalizada', 'Arial';
     background-color: var(--bg-primary);
     color: var(--text-primary);
 }
 
-.header{
+.header {
     background-color: var(--green-primary);
     border: 2px solid var(--border-color);
     flex-wrap: wrap;
@@ -54,7 +55,8 @@ body{
     padding: 10px;
     border-radius: 0px 0px 10px 10px;
 }
-.header > .nome{   
+
+.header>.nome {
     text-decoration: none;
     color: var(--text-primary);
     font-size: 20px;
@@ -62,16 +64,18 @@ body{
     transition: 0.3s;
     margin-left: 10px;
 }
-.nome:hover{
+
+.nome:hover {
     transform: scale(1.2);
 }
-.menu{
+
+.menu {
     display: flex;
     list-style-type: none;
 
 }
 
-.menu > li{
+.menu>li {
     text-decoration: none;
     margin-left: 10px;
     color: var(--text-primary);
@@ -81,47 +85,55 @@ body{
     cursor: pointer;
     transition: 0.3s;
 }
-.menu>li:hover{
-    background-color: var(--green-hover);    
+
+.menu>li:hover {
+    background-color: var(--green-hover);
     transform: scale(1.1);
 }
-.valor{
+
+.valor {
     background: transparent;
 }
+
 /* STYLE DA ASSIDE */
-aside{
+aside {
     display: grid;
     grid-template-columns: 2fr 1fr;
 }
-.button-pesquisar{
-    background-color:var(--green-primary);
+
+.button-pesquisar {
+    background-color: var(--green-primary);
     color: var(--text-primary);
-    border:none;
+    border: none;
     padding: 5px;
     border-radius: 100%;
     cursor: pointer;
     transition: 0.3s;
     grid-column: 2;
 }
-.button-pesquisar:hover{
+
+.button-pesquisar:hover {
     transform: scale(1.1);
 
 }
-.insert-pesquisar{
+
+.insert-pesquisar {
     padding: 10px;
-    border:solid  var(--text-secondary);
+    border: solid var(--text-secondary);
     background-color: var(--text-primary);
     border-radius: 50px;
     outline: none;
     font-size: 16px;
     grid-column: 1;
 }
-.insert-pesquisar::placeholder{
+
+.insert-pesquisar::placeholder {
     color: var(--text-muted);
     font-size: 16px;
 }
-.produtos, 
-.checkout{
+
+.produtos,
+.checkout {
     background-color: var(--bg-secondary);
     border-radius: 20px;
     margin: 10px;
@@ -129,44 +141,66 @@ aside{
     border: solid var(--border-color);
     box-shadow: var(--shadow);
 }
-.produtos{
+
+.produtos {
     display: grid;
-    grid-template-columns:1fr auto;
+    grid-template-columns: 1fr auto;
     gap: 10px;
 }
-.categoria-produtos{
+
+.categoria-produtos {
     text-align: center;
     grid-column: 1/-1;
 }
-.card-produtos{
+
+.card-produtos {
     grid-column: 1/-1;
 }
 
-section > ul{
+section>ul {
     list-style-type: none;
 }
+
 /* STYLE DO CARD PRODUTOS */
-.card-produtos{
+.card-produtos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 10px;
     text-align: center;
     max-height: 600px;
     overflow-y: auto;
 }
-.produto{
+
+.produto {
     background: var(--bg-card);
     padding: 10px;
 }
 
+.produto > button{
+    background: var(--text-primary);
+    border: solid var(--green-secondary);
+    padding: 10px;
+    margin: 10px;
+    color: var(--green-secondary);
+    font-size: 15px;
+    border-radius:5px ;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.produto > button:hover{
+    background: var(--green-secondary);
+    color: var(--text-primary);
+    transform: scale(1.1);
+}
 /* STYLE DO FOOTER */
-.footer{
+.footer {
     display: flex;
     padding: 20px;
-    justify-content:center;
+    justify-content: center;
     gap: 20px;
 }
-.remove{
+
+.remove {
     background-color: var(--bg-primary);
     display: flex;
     justify-content: center;
@@ -179,14 +213,16 @@ section > ul{
     border-radius: 5px;
     transition: 0.3s;
 }
-.remove:hover{
+
+.remove:hover {
     color: var(--text-primary);
     background: var(--danger);
     border: solid var(--danger);
     transform: scale(1.1);
     cursor: pointer;
 }
-.final{
+
+.final {
     gap: 3px;
     background-color: var(--bg-primary);
     font-weight: bold;
@@ -199,10 +235,17 @@ section > ul{
     border-radius: 5px;
     transition: 0.3s;
 }
-.final:hover{
+
+.final:hover {
     color: aliceblue;
     background: var(--green-hover);
     border: solid var(--green-hover);
     transform: scale(1.1);
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    aside {
+        grid-template-columns: 1fr;
+    }
 }

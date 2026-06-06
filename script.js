@@ -106,8 +106,42 @@ const produtos = [
     }
 
 ];
-const cardProdutos = document.getElementById('card-produtos');
 
-for (const produto of produtos) {
-    cardProdutos.innerHTML += `<div class = "produto"><img src="${produto.imagem}" alt="foto Produto"><p>${produto.nome}</p><p>${produto.preco}</p><p>${produto.estoque}</p></div>`
+const carrinho = [];
+
+const cardProdutos = document.getElementById('card-produtos');
+const cardCheckout =document.getElementById('lista-checkout');
+function render() {
+    for (const produto of produtos) {
+        cardProdutos.innerHTML += `<div class = "produto"><img src="${produto.imagem}" alt="foto Produto"><p>${produto.nome}</p><p>${produto.preco}</p><p>${produto.estoque}</p><button onclick="addCart(${produto.id})">Carrinho</button></div>`;
+    };
 };
+
+function search() {
+    const pesquisa = document.getElementById('insert-pesquisar').value;
+    if (!pesquisa) {
+        cardProdutos.innerHTML = "";
+        render();
+        return;
+    }
+    cardProdutos.innerHTML = "";
+    for (const produto of produtos) {
+        if (produto.nome.toLowerCase().includes(pesquisa.toLowerCase())) {
+            cardProdutos.innerHTML += `<div class = "produto"><img src="${produto.imagem}" alt="foto Produto"><p>${produto.nome}</p><p>${produto.preco}</p><p>${produto.estoque}</p></div>`;
+        };
+    };
+};
+
+function addCart(id) {
+    const produto = produtos.find(p => p.id === id);
+    carrinho.push(produto);
+    cardCheckout.innerHTML += `<li>${produto.id} - ${produto.nome} - ${produto.preco}</li>`
+    console.log(carrinho)
+}
+
+
+function clearCheck(){
+    cardCheckout.innerHTML = "";
+}
+
+render();
