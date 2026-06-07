@@ -120,25 +120,26 @@ function render() {
 function search() {
     const pesquisa = document.getElementById('insert-pesquisar').value;
     if (!pesquisa) {
-        cardProdutos.innerHTML = "";
+        cardProdutos.innerHTML = ""; 
         render();
         return;
     }
     cardProdutos.innerHTML = "";
     for (const produto of produtos) {
         if (produto.nome.toLowerCase().includes(pesquisa.toLowerCase())) {
-            cardProdutos.innerHTML += `<div class = "produto"><img src="${produto.imagem}" alt="foto Produto"><p>${produto.nome}</p><p>${produto.preco}</p><p>${produto.estoque}</p></div>`;
+            cardProdutos.innerHTML += `<div class = "produto"><img src="${produto.imagem}" alt="foto Produto"><p>${produto.nome}</p><p>${produto.preco}</p><p>${produto.estoque}</p><button onclick="addCart(${produto.id})">Carrinho</button></div>`;
         };
     };
 };
 
 function addCart(id) {
+    let quantidade = 1
     const produto = produtos.find(p => p.id === id);
     carrinho.push(produto);
-    cardCheckout.innerHTML += `<li>${produto.id} - ${produto.nome} - ${produto.preco}</li>`
+    cardCheckout.innerHTML += `<li><span>${produto.id}</span><span>${produto.nome}</span><span>${quantidade}</span><span>${produto.preco}</span></li>`
     console.log(carrinho)
 }
-
+ 
 
 function clearCheck(){
     cardCheckout.innerHTML = "";

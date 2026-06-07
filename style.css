@@ -167,6 +167,7 @@ section>ul {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 10px;
     text-align: center;
+    height: 600px;
     max-height: 600px;
     overflow-y: auto;
 }
@@ -176,22 +177,51 @@ section>ul {
     padding: 10px;
 }
 
-.produto > button{
+.produto>button {
     background: var(--text-primary);
     border: solid var(--green-secondary);
     padding: 10px;
     margin: 10px;
     color: var(--green-secondary);
     font-size: 15px;
-    border-radius:5px ;
+    border-radius: 5px;
     transition: 0.3s;
     cursor: pointer;
 }
-.produto > button:hover{
+
+.produto>button:hover {
     background: var(--green-secondary);
     color: var(--text-primary);
     transform: scale(1.1);
 }
+
+/* STYLE DO CHECKOUT */
+.checkout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px 1fr));
+    grid-template-rows: 30px 30px;
+}
+
+.div-check {
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.cabecalho-checkout {
+    display: grid;
+    grid-template-columns: 50px 1fr 100px 100px;
+}
+
+.lista-checkout>li {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 1fr;
+}
+
+.checkout>h2 {
+    grid-column: 1/-1;
+    text-align: center;
+}
+
 /* STYLE DO FOOTER */
 .footer {
     display: flex;
